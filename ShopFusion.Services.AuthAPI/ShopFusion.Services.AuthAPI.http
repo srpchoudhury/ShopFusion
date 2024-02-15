@@ -1,6 +1,0 @@
-@ShopFusion.Services.AuthAPI_HostAddress = http://localhost:5006
-
-GET {{ShopFusion.Services.AuthAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
