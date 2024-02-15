@@ -3,12 +3,13 @@ using ShopFusion.Services.CouponAPI.Models.Dto;
 using ShopFusion.Services.CouponAPI.Data;
 using ShopFusion.Services.CouponAPI.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ShopFusion.Services.CouponAPI.Controllers
 {
     [Route("api/coupon")]
     [ApiController]
-    
+    [Authorize]
     public class CouponAPIController : ControllerBase
     {
         private readonly AppDbContext _db;
