@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopFusion.Services.AuthAPI.Models.Dto;
 using ShopFusion.Services.AuthAPI.Service.IService;
@@ -7,6 +8,7 @@ namespace ShopFusion.Services.AuthAPI.Controllers
 {
     [Route("api/auth")]
     [ApiController]
+    [EnableCors("AllowAll")]
     public class AuthAPIController : ControllerBase
     {
         private readonly IAuthService _authService;
