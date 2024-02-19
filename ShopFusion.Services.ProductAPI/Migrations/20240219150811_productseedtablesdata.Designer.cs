@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopFusion.Services.ProductAPI.Data;
 
@@ -11,9 +12,11 @@ using ShopFusion.Services.ProductAPI.Data;
 namespace ShopFusion.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240219150811_productseedtablesdata")]
+    partial class productseedtablesdata
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,7 +63,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 1,
                             BrandName = "Nature Land",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6039),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(201),
                             IsActive = true
                         },
                         new
@@ -68,7 +71,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 2,
                             BrandName = "Fortune",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6073),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(238),
                             IsActive = true
                         });
                 });
@@ -111,7 +114,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 1,
                             CategoryName = "Dal's & Pulses",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6107),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(272),
                             IsActive = true
                         },
                         new
@@ -119,7 +122,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 2,
                             CategoryName = "Ghee & Oils",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6141),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(317),
                             IsActive = true
                         });
                 });
@@ -161,7 +164,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(5965),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(75),
                             IsActive = true,
                             MainCategoryName = "Staples"
                         },
@@ -169,7 +172,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6002),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(159),
                             IsActive = true,
                             MainCategoryName = "Snacks & Beverages"
                         });
@@ -233,41 +236,11 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            BrandId = 1,
-                            CategoryId = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(5836),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/ke7ff680/pulses/z/m/x/500-kabuli-chana-kabuli-chana-natureland-organics-original-imafuy3hfkx4qw7d.jpeg?q=70",
-                            ProductName = "Natureland Organics Kabuli Chana (Kabuli Buta) (Whole)  (500 g)",
-                            ProductPrice = 126.0,
-                            SubCategoryId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BrandId = 1,
-                            CategoryId = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(5926),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/kqpj4i80/pulses/r/a/z/1-arhar-dal-arhar-dal-natureland-organics-original-imag4npb8twt4dwz.jpeg?q=70",
-                            ProductName = "Natureland Organics Yellow Toor/Arhar Dal (Harada Dali) (Split)  (1 kg)",
-                            ProductPrice = 1299.0,
-                            SubCategoryId = 1
-                        },
-                        new
-                        {
                             Id = 3,
                             BrandId = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6246),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(430),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -282,7 +255,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6278),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(465),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -330,7 +303,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6176),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(355),
                             IsActive = true,
                             SubCategoryName = "Toor Daal"
                         },
@@ -338,7 +311,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6209),
+                            CreatedDate = new DateTime(2024, 2, 19, 20, 38, 10, 407, DateTimeKind.Local).AddTicks(393),
                             IsActive = true,
                             SubCategoryName = "Urad Daal"
                         });

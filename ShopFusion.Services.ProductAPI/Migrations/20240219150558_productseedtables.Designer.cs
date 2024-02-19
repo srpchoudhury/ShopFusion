@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopFusion.Services.ProductAPI.Data;
 
@@ -11,9 +12,11 @@ using ShopFusion.Services.ProductAPI.Data;
 namespace ShopFusion.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240219150558_productseedtables")]
+    partial class productseedtables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,24 +56,6 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Brands");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BrandName = "Nature Land",
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6039),
-                            IsActive = true
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BrandName = "Fortune",
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6073),
-                            IsActive = true
-                        });
                 });
 
             modelBuilder.Entity("ShopFusion.Services.ProductAPI.Models.Categories", b =>
@@ -104,24 +89,6 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryName = "Dal's & Pulses",
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6107),
-                            IsActive = true
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryName = "Ghee & Oils",
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6141),
-                            IsActive = true
-                        });
                 });
 
             modelBuilder.Entity("ShopFusion.Services.ProductAPI.Models.MainCategory", b =>
@@ -155,24 +122,6 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MainCategory");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(5965),
-                            IsActive = true,
-                            MainCategoryName = "Staples"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6002),
-                            IsActive = true,
-                            MainCategoryName = "Snacks & Beverages"
-                        });
                 });
 
             modelBuilder.Entity("ShopFusion.Services.ProductAPI.Models.Product", b =>
@@ -229,68 +178,6 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BrandId = 1,
-                            CategoryId = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(5836),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/ke7ff680/pulses/z/m/x/500-kabuli-chana-kabuli-chana-natureland-organics-original-imafuy3hfkx4qw7d.jpeg?q=70",
-                            ProductName = "Natureland Organics Kabuli Chana (Kabuli Buta) (Whole)  (500 g)",
-                            ProductPrice = 126.0,
-                            SubCategoryId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BrandId = 1,
-                            CategoryId = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(5926),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/kqpj4i80/pulses/r/a/z/1-arhar-dal-arhar-dal-natureland-organics-original-imag4npb8twt4dwz.jpeg?q=70",
-                            ProductName = "Natureland Organics Yellow Toor/Arhar Dal (Harada Dali) (Split)  (1 kg)",
-                            ProductPrice = 1299.0,
-                            SubCategoryId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BrandId = 2,
-                            CategoryId = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6246),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/xif0q/pulses/g/4/h/-original-imagpgzhcvgcyaxg.jpeg?q=70",
-                            ProductName = "Tata Sampann White Urad Dal (Biri Dali) (Whole)  (1 kg)",
-                            ProductPrice = 200.0,
-                            SubCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BrandId = 2,
-                            CategoryId = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6278),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/xif0q/pulses/0/g/n/-original-imagsy58yzw47w8f.jpeg?q=70",
-                            ProductName = "Natureland Organics Urad Dal (Biri Dali) (Split)  (1 kg)",
-                            ProductPrice = 200.0,
-                            SubCategoryId = 2
-                        });
                 });
 
             modelBuilder.Entity("ShopFusion.Services.ProductAPI.Models.SubCategories", b =>
@@ -324,24 +211,6 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SubCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6176),
-                            IsActive = true,
-                            SubCategoryName = "Toor Daal"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 19, 20, 46, 24, 856, DateTimeKind.Local).AddTicks(6209),
-                            IsActive = true,
-                            SubCategoryName = "Urad Daal"
-                        });
                 });
 #pragma warning restore 612, 618
         }
