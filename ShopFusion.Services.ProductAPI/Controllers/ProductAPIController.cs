@@ -30,7 +30,6 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             {
                // IEnumerable<Product> objList = _db.Products.ToList();
               //  _response.Result = _mapper.Map<IEnumerable<ProductDto>>(objList);
-
                 var result = _db.Products.Join(_db.MainCategory, PD => PD.MainCategoryId, MC => MC.Id, (PD, MC) => new { PD, MC })
                                          .Join(_db.Brands, PD_MC => PD_MC.PD.BrandId, BD => BD.Id, (PD_MC, BD) => new { PD_MC, BD })
                                          .Join(_db.Categories, PD_MC_BD =>PD_MC_BD.PD_MC.PD.CategoryId, CG => CG.Id, (PD_MC_BD,CG) => new {PD_MC_BD, CG })
@@ -138,7 +137,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             return _response;
         }
 
-        /* [HttpGet]
+      [HttpGet]
         public ResponseDto GetMainCategory()
         {
             try
@@ -155,13 +154,28 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             return _response;
         }
 
+        /*  [HttpGet]
+        public ResponseDto GetBrand()
+         {
+             try
+             {
+                 IEnumerable<Brands> objList = _db.Brands.ToList();
+                 _response.Result = _mapper.Map<IEnumerable<BrandDto>>(objList);
+             }
+             catch (Exception ex)
+             {
+                 _response.IsSuccess = false;
+                 _response.Message = ex.Message;
+             }
+             return _response;
+         }
        [HttpGet]
-       public ResponseDto GetBrand()
+        public ResponseDto GetCategory()
         {
             try
             {
-                IEnumerable<Brands> objList = _db.Brands.ToList();
-                _response.Result = _mapper.Map<IEnumerable<BrandDto>>(objList);
+                IEnumerable<Categories> objList = _db.Categories.ToList();
+                _response.Result = _mapper.Map<IEnumerable<CategoryDto>>(objList);
             }
             catch (Exception ex)
             {
@@ -170,35 +184,20 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             }
             return _response;
         }
-      [HttpGet]
-       public ResponseDto GetCategory()
-       {
-           try
-           {
-               IEnumerable<Categories> objList = _db.Categories.ToList();
-               _response.Result = _mapper.Map<IEnumerable<CategoryDto>>(objList);
-           }
-           catch (Exception ex)
-           {
-               _response.IsSuccess = false;
-               _response.Message = ex.Message;
-           }
-           return _response;
-       }
-       [HttpGet]
-       public ResponseDto GetSubCategory()
-       {
-           try
-           {
-               IEnumerable<SubCategories> objList = _db.SubCategories.ToList();
-               _response.Result = _mapper.Map<IEnumerable<SubCategoryDto>>(objList);
-           }
-           catch (Exception ex)
-           {
-               _response.IsSuccess = false;
-               _response.Message = ex.Message;
-           }
-           return _response;
-       }*/
+        [HttpGet]
+        public ResponseDto GetSubCategory()
+        {
+            try
+            {
+                IEnumerable<SubCategories> objList = _db.SubCategories.ToList();
+                _response.Result = _mapper.Map<IEnumerable<SubCategoryDto>>(objList);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }*/
     }
 }
