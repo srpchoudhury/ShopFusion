@@ -11,6 +11,10 @@ namespace ShopFusion.Services.ProductAPI
             var mappingConfig = new MapperConfiguration(config =>
             {
                 config.CreateMap<ProductDto, Product>().ReverseMap();
+                config.CreateMap<MainCategoryDto, MainCategory>().ReverseMap();
+                config.CreateMap<BrandDto, Brands>().ReverseMap();
+                config.CreateMap<CategoryDto, Categories>().ReverseMap();
+                config.CreateMap<SubCategoryDto, SubCategories>().ReverseMap();
                
             });
             return mappingConfig;

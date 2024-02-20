@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopFusion.Services.ProductAPI.Data;
 
@@ -11,9 +12,11 @@ using ShopFusion.Services.ProductAPI.Data;
 namespace ShopFusion.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240220151445_dataInProductsandsometable")]
+    partial class dataInProductsandsometable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,7 +63,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 1,
                             BrandName = "Nature Land",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6012),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(4941),
                             IsActive = true
                         },
                         new
@@ -68,7 +71,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 2,
                             BrandName = "Fortune",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6072),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(4976),
                             IsActive = true
                         },
                         new
@@ -76,7 +79,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 3,
                             BrandName = "Patanjali",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6144),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5007),
                             IsActive = true
                         },
                         new
@@ -84,23 +87,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 4,
                             BrandName = "Fortune",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6198),
-                            IsActive = true
-                        },
-                        new
-                        {
-                            Id = 5,
-                            BrandName = "Saffola",
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6254),
-                            IsActive = true
-                        },
-                        new
-                        {
-                            Id = 6,
-                            BrandName = "Gowardhan",
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6323),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5036),
                             IsActive = true
                         });
                 });
@@ -146,7 +133,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 1,
                             CategoryName = "Dal's & Pulses",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6382),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5067),
                             IsActive = true,
                             MainCategoryId = 1
                         },
@@ -155,7 +142,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 2,
                             CategoryName = "Ghee & Oils",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6435),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5102),
                             IsActive = true,
                             MainCategoryId = 1
                         },
@@ -164,9 +151,9 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 3,
                             CategoryName = "Atta & Flours",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6484),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5132),
                             IsActive = true,
-                            MainCategoryId = 1
+                            MainCategoryId = 2
                         });
                 });
 
@@ -207,7 +194,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(5886),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(4856),
                             IsActive = true,
                             MainCategoryName = "Staples"
                         },
@@ -215,7 +202,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(5949),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(4897),
                             IsActive = true,
                             MainCategoryName = "Snacks & Beverages"
                         });
@@ -283,7 +270,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 1,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(5692),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(4722),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -298,7 +285,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 1,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(5816),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(4812),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -313,7 +300,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6881),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5305),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -328,7 +315,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6936),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5338),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -343,9 +330,9 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 3,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6988),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5367),
                             IsActive = true,
-                            MainCategoryId = 1,
+                            MainCategoryId = 2,
                             ProductDescription = "",
                             ProductImage = "https://rukminim2.flixcart.com/image/280/280/xif0q/flour/d/u/z/-original-imagwhtwwm2ksbxe.jpeg?q=70",
                             ProductName = "PATANJALI Chakki Atta, Whole Wheat with Bran, Genhu ka Atta, Organic Flour (Whole-Gehuro otta)  (5 kg)",
@@ -358,44 +345,14 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 4,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(7045),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5416),
                             IsActive = true,
-                            MainCategoryId = 1,
+                            MainCategoryId = 2,
                             ProductDescription = "",
                             ProductImage = "https://rukminim2.flixcart.com/image/416/416/kqidx8w0/flour/h/s/p/chakki-fresh-atta-whole-wheat-flour-fortune-original-imag4gb3ggvam3fg.jpeg?q=70",
                             ProductName = "Fortune Chakki Fresh Atta (Whole-Gehuro otta)  (10 kg)",
                             ProductPrice = 405.0,
                             SubCategoryId = 4
-                        },
-                        new
-                        {
-                            Id = 7,
-                            BrandId = 5,
-                            CategoryId = 2,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(7096),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/xif0q/edible-oil/g/g/k/-original-imaghuf2t32wgzhe.jpeg?q=70",
-                            ProductName = "Saffola Gold Refined Cooking Rice Bran & Corn Blended Oil Pouch (Mishrita Tela)  (1 L)",
-                            ProductPrice = 170.0,
-                            SubCategoryId = 5
-                        },
-                        new
-                        {
-                            Id = 8,
-                            BrandId = 6,
-                            CategoryId = 2,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(7147),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/xif0q/ghee/x/9/q/750-cow-1-pouch-gowardhan-original-imagvp7fntadfgrx.jpeg?q=70",
-                            ProductName = "Gowardhan Pure Cow Ghee 750 ml Pouch",
-                            ProductPrice = 439.0,
-                            SubCategoryId = 6
                         });
                 });
 
@@ -443,7 +400,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 1,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6544),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5171),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Toor Daal"
@@ -453,7 +410,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6606),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5205),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Urad Daal"
@@ -463,9 +420,9 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 3,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6660),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5238),
                             IsActive = true,
-                            MainCategoryId = 1,
+                            MainCategoryId = 2,
                             SubCategoryName = "Wheat Atta"
                         },
                         new
@@ -473,30 +430,10 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 4,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6713),
+                            CreatedDate = new DateTime(2024, 2, 20, 20, 44, 44, 331, DateTimeKind.Local).AddTicks(5270),
                             IsActive = true,
-                            MainCategoryId = 1,
+                            MainCategoryId = 2,
                             SubCategoryName = "Rava & Sooji"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CategoryId = 2,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6766),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            SubCategoryName = "Blended Oil"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CategoryId = 2,
-                            CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 2, 20, 21, 48, 54, 498, DateTimeKind.Local).AddTicks(6823),
-                            IsActive = true,
-                            MainCategoryId = 1,
-                            SubCategoryName = "Ghee"
                         });
                 });
 #pragma warning restore 612, 618

@@ -6,6 +6,9 @@ namespace ShopFusion.Services.ProductAPI.Models
     {
         public int Id { get; set; }
         public string SubCategoryName { get; set; }
+
+        public int MainCategoryId { get; set; }
+        public int CategoryId { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public string? UpdatedBy { get; set; }

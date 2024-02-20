@@ -137,24 +137,91 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             return _response;
         }
 
-      [HttpGet]
-        public ResponseDto GetMainCategory()
+        [HttpGet("itemCategoryDetails")]
+        public ResponseDto GetItemCategoryDetails()
         {
             try
             {
-                var obj = _db.MainCategory.ToList();
-                _response.Result = obj;
+                /*  var result = _db.MainCategory.Join(_db.Categories, MC => MC.Id, CG => CG.MainCategoryId, (MC, CG) => new { MC, CG })
+                                               .Join(_db.SubCategories, MC_CG => MC_CG.MC.Id, SC => SC.MainCategoryId, (MC_CG, SC) => new { MC_CG, SC })
+                                               .Where(x => x.MC_CG.MC.IsActive == true &&
+                                                      x.MC_CG.CG.IsActive == true &&
+                                                      x.SC.IsActive == true)
+                                               .GroupBy(t => new { t.SC.MainCategoryId, t.SC.CategoryId })
+                                               .Select(s => new
+                                               {
+                                                 MainCategories = s.Select(p => new
+                                                   {
+                                                       MainCategoryId = s.Select(x => x.SC.MainCategoryId),
+                                                       MainCategoryName = s.First().MC_CG.MC.MainCategoryName,
+                                                       Categories = s.Select(k => new
+                                                       {
+                                                           CategoryId = s.Select(x => x.SC.CategoryId),
+                                                           CategoryName = s.First().MC_CG.CG.CategoryName,
+                                                           SubCategories = s.Select(sub => new
+                                                           {
+                                                               SubCategoryId = sub.SC.Id,
+                                                               SubCategoryName = sub.SC.SubCategoryName
+                                                           }).Distinct().ToList()
+                                                       }).Distinct().ToList(),
+                                                   }).Distinct().ToList()
+                                               }).Distinct().ToList();
+                */
+                var result =
+               _db.MainCategory.Join(_db.Categories, MC => MC.Id, CG => CG.MainCategoryId, (MC, CG) => new { MC, CG })
+                                        .Join(_db.SubCategories, MC_CG => MC_CG.CG.Id, SC => SC.CategoryId, (MC_CG, SC) => new { MC_CG, SC })
+                                        .Where(x => x.MC_CG.MC.IsActive && x.MC_CG.CG.IsActive && x.SC.IsActive)
+                                        .GroupBy(t => new { t.SC.MainCategoryId})
+                                        .Select(s => new
+                                        {
+                                           MainCategories = s.GroupBy(g => g.SC.MainCategoryId)
+                                           .Select(x => new
+                                           {
+                                               MainCategoryId = x.Key,
+                                               MainCategoryName = x.First().MC_CG.MC.MainCategoryName,
+                                               Categories = x.GroupBy(g => g.SC.CategoryId)
+                                               .Select(c => new
+                                               {
+                                                    CategoryId = c.Key,
+                                                    CategoryName = c.First().MC_CG.CG.CategoryName,
+                                                    SubCategories = c.GroupBy(t => t.SC.Id)
+                                                    .Select(s => new
+                                                    {
+                                                        SubCategoryId = s.Key,
+                                                        SubCategoryName = s.First().SC.SubCategoryName
+                                                    }).ToList()
+                                               }).ToList()
+                                           }).ToList()
+
+                                        }).ToList();
+
+
+                _response.Result = result;
             }
             catch (Exception ex)
             {
-
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
             }
             return _response;
         }
 
-        /*  [HttpGet]
+        [HttpGet("maincategory")]
+        public ResponseDto GetMainCategory()
+        {
+            try
+            {
+                IEnumerable<MainCategory> objList = _db.MainCategory.ToList();
+                _response.Result = _mapper.Map<IEnumerable<MainCategoryDto>>(objList);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
+        [HttpGet("brands")]
         public ResponseDto GetBrand()
          {
              try
@@ -169,7 +236,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
              }
              return _response;
          }
-       [HttpGet]
+       [HttpGet("categories")]
         public ResponseDto GetCategory()
         {
             try
@@ -184,7 +251,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             }
             return _response;
         }
-        [HttpGet]
+        [HttpGet("subcategories")]
         public ResponseDto GetSubCategory()
         {
             try
@@ -198,6 +265,6 @@ namespace ShopFusion.Services.ProductAPI.Controllers
                 _response.Message = ex.Message;
             }
             return _response;
-        }*/
+        }
     }
 }
