@@ -42,6 +42,9 @@ namespace ShopFusion.Services.AuthAPI.Controllers
                 return BadRequest(_response);
             }
             _response.Result = loginResponse;
+            _response.Message = "Login Successfull";
+
+
             return Ok(_response);
 
         }
