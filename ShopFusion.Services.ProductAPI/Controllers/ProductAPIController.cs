@@ -11,6 +11,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
     [Route("api/product")]
     [ApiController]
     [EnableCors("AllowAll")]
+  
     public class ProductAPIController : ControllerBase
     {
         private readonly AppDbContext _db;
@@ -137,6 +138,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             return _response;
         }
 
+      
         [HttpGet("itemCategoryDetails")]
         public ResponseDto GetItemCategoryDetails()
         {

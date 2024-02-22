@@ -29,6 +29,18 @@ namespace ShopFusion.Services.AuthAPI.Controllers
                 _response.Message = errorMessage;
                 return BadRequest(_response);
             }
+            else
+            {
+                var assignRoleSuccessfull = await _authService.AssignRole(model.Email, model.Role.ToUpper());
+                if (!assignRoleSuccessfull)
+                {
+                    _response.IsSuccess = false;
+                    _response.Message = "Error Encountered";
+                    return BadRequest(_response);
+                }
+            }
+          
+            _response.Message = "Registration Successfull";
             return Ok(_response);
         }
         [HttpPost("login")]
