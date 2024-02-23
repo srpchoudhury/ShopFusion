@@ -20,7 +20,9 @@ namespace ShopFusion.Services.ShoppingCartAPI.Controllers
         private ICouponService _couponService;
         private readonly AppDbContext _db;
         public CartAPIController(AppDbContext db,
-            IMapper mapper,IProductService productService, ICouponService couponService)
+            IMapper mapper,
+            IProductService productService,
+            ICouponService couponService )
         {
             _db = db;
             _mapper = mapper;
@@ -29,6 +31,7 @@ namespace ShopFusion.Services.ShoppingCartAPI.Controllers
             this._response = new ResponseDto();
         }
 
+        //add item  to cart
         [HttpPost("CartUpsert")]
         public async Task<ResponseDto> CartUpsert(CartDto cartDto)
         {
@@ -80,6 +83,7 @@ namespace ShopFusion.Services.ShoppingCartAPI.Controllers
             return _response;
         }
 
+        //remove item from cart
         [HttpPost("RemoveCart")]
         public async Task<ResponseDto> RemoveCart(string userId,int productId)
         {
@@ -120,6 +124,7 @@ namespace ShopFusion.Services.ShoppingCartAPI.Controllers
             return _response;
         }
 
+        //get cart details by userid
         [HttpGet("GetCart/{userId}")]
         public async Task<ResponseDto> GetCart(string userId)
         {
@@ -179,6 +184,7 @@ namespace ShopFusion.Services.ShoppingCartAPI.Controllers
 }
          */
 
+        //applay coupon to  a  specific users cartheader table
         [HttpPost("ApplayCoupon")]
         public async Task<object> ApplayCupon([FromBody] CartDto cartDto)
         {
@@ -198,6 +204,7 @@ namespace ShopFusion.Services.ShoppingCartAPI.Controllers
             return _response;
         }
 
+        //remove coupon from  a  specific users cartheader table
         [HttpPost("RemoveCupon")]
         public async Task<object> RemoveCupon([FromBody] CartDto cartDto)
         {
