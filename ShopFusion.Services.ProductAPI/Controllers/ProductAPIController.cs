@@ -11,7 +11,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
     [Route("api/product")]
     [ApiController]
     [EnableCors("AllowAll")]
-  
+   
     public class ProductAPIController : ControllerBase
     {
         private readonly AppDbContext _db;
@@ -72,8 +72,35 @@ namespace ShopFusion.Services.ProductAPI.Controllers
         {
             try
             {
-                Product obj = _db.Products.First(u => u.Id == id);
-                _response.Result=_mapper.Map<ProductDto>(obj);
+                //Product obj = _db.Products.First(u => u.Id == id);
+                //_response.Result=_mapper.Map<ProductDto>(obj);
+                var result = _db.Products.Join(_db.MainCategory, PD => PD.MainCategoryId, MC => MC.Id, (PD, MC) => new { PD, MC })
+                                        .Join(_db.Brands, PD_MC => PD_MC.PD.BrandId, BD => BD.Id, (PD_MC, BD) => new { PD_MC, BD })
+                                        .Join(_db.Categories, PD_MC_BD => PD_MC_BD.PD_MC.PD.CategoryId, CG => CG.Id, (PD_MC_BD, CG) => new { PD_MC_BD, CG })
+                                        .Join(_db.SubCategories, PD_MC_BD_CG => PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.SubCategoryId, SC => SC.Id, (PD_MC_BD_CG, SC) => new { PD_MC_BD_CG, SC })
+                                        .Where(x => x.SC.IsActive == true &&
+                                                    x.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.IsActive == true &&
+                                                    x.PD_MC_BD_CG.PD_MC_BD.BD.IsActive == true &&
+                                                    x.PD_MC_BD_CG.PD_MC_BD.PD_MC.MC.IsActive == true &&
+                                                    x.PD_MC_BD_CG.CG.IsActive == true && 
+                                                    x.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.Id == id)
+                                        .Select(s => new
+                                        {
+                                            ProductId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.Id,
+                                            ProductName = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductName,
+                                            ProductDescription = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductDescription,
+                                            ProductImage = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductImage,
+                                            ProductPrice = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductPrice,
+                                            BrandId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.BrandId,
+                                            BrandName = s.PD_MC_BD_CG.PD_MC_BD.BD.BrandName,
+                                            MainCategoryId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.MainCategoryId,
+                                            MainCategoryName = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.MC.MainCategoryName,
+                                            CategoryId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.CategoryId,
+                                            CategoryName = s.PD_MC_BD_CG.CG.CategoryName,
+                                            SubCategoryId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.SubCategoryId,
+                                            SubCategoryName = s.SC.SubCategoryName
+                                        }).ToList();
+                _response.Result = result;
             }
             catch (Exception ex)
             {
