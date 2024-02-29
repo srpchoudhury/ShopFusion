@@ -4,11 +4,13 @@ using ShopFusion.Services.CouponAPI.Data;
 using ShopFusion.Services.CouponAPI.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace ShopFusion.Services.CouponAPI.Controllers
 {
     [Route("api/coupon")]
     [ApiController]
+    [EnableCors("AllowAll")]
     //[Authorize]
     public class CouponAPIController : ControllerBase
     {
