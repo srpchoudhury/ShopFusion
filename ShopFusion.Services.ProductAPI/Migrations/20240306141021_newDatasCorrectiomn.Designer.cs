@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopFusion.Services.ProductAPI.Data;
 
@@ -11,9 +12,11 @@ using ShopFusion.Services.ProductAPI.Data;
 namespace ShopFusion.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240306141021_newDatasCorrectiomn")]
+    partial class newDatasCorrectiomn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,7 +63,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 1,
                             BrandName = "Nature Land",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(8884),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4310),
                             IsActive = true
                         },
                         new
@@ -68,7 +71,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 2,
                             BrandName = "Fortune",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(8926),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4369),
                             IsActive = true
                         },
                         new
@@ -76,7 +79,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 3,
                             BrandName = "Patanjali",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(8959),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4418),
                             IsActive = true
                         },
                         new
@@ -84,7 +87,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 4,
                             BrandName = "Fortune",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(8989),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4468),
                             IsActive = true
                         },
                         new
@@ -92,7 +95,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 5,
                             BrandName = "Saffola",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9020),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4518),
                             IsActive = true
                         },
                         new
@@ -100,7 +103,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 6,
                             BrandName = "Gowardhan",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9055),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4576),
                             IsActive = true
                         },
                         new
@@ -108,7 +111,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 7,
                             BrandName = "ITC",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9086),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4621),
                             IsActive = true
                         },
                         new
@@ -116,7 +119,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 8,
                             BrandName = "Flipkart Supermart",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9115),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4667),
                             IsActive = true
                         },
                         new
@@ -124,7 +127,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 9,
                             BrandName = "Beyond Snack",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9146),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4712),
                             IsActive = true
                         },
                         new
@@ -132,7 +135,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 10,
                             BrandName = "Cadbury",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9178),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4788),
                             IsActive = true
                         },
                         new
@@ -140,7 +143,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 11,
                             BrandName = "Sunfeast",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9210),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4838),
                             IsActive = true
                         },
                         new
@@ -148,7 +151,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 12,
                             BrandName = "UNIBIC",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9239),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4885),
                             IsActive = true
                         },
                         new
@@ -156,7 +159,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 13,
                             BrandName = "Coca Cola",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9268),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4931),
                             IsActive = true
                         },
                         new
@@ -164,7 +167,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 14,
                             BrandName = "Pepsi",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9298),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4977),
                             IsActive = true
                         },
                         new
@@ -172,7 +175,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 15,
                             BrandName = "Red Bull",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9328),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5023),
                             IsActive = true
                         },
                         new
@@ -180,7 +183,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 16,
                             BrandName = "Sting",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9359),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5069),
                             IsActive = true
                         });
                 });
@@ -231,7 +234,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/09/06/2017/38deea34-44ce-4650-a1fb-60f1c0172feb.png?q=90",
                             CategoryName = "Dal's & Pulses",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9395),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5120),
                             IsActive = true,
                             MainCategoryId = 1
                         },
@@ -241,7 +244,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/06/11/2023/bab3c31e-0be6-4f67-b9a6-cb341fa1f034.png?q=90",
                             CategoryName = "Ghee & Oils",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9443),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5171),
                             IsActive = true,
                             MainCategoryId = 1
                         },
@@ -251,7 +254,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/05/07/2017/cd819684-9369-468b-895c-ef9b57b6b059.png?q=90",
                             CategoryName = "Atta & Flours",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9472),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5214),
                             IsActive = true,
                             MainCategoryId = 1
                         },
@@ -261,7 +264,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/09/06/2017/ffad029d-5b1e-4de7-a91f-0bbe1803e197.png?q=90",
                             CategoryName = "Biscuits",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9499),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5254),
                             IsActive = true,
                             MainCategoryId = 2
                         },
@@ -271,7 +274,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/05/07/2017/f5433b1c-955d-47e2-83a5-0dbfb240de13.png?q=90",
                             CategoryName = "Chips, Namkeen & Snacks",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9528),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5296),
                             IsActive = true,
                             MainCategoryId = 2
                         },
@@ -281,7 +284,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/05/07/2017/93d975ff-8921-480a-afeb-13864520f568.png?q=90",
                             CategoryName = "Soft Drinks",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9559),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5341),
                             IsActive = true,
                             MainCategoryId = 2
                         });
@@ -324,7 +327,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(8755),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4067),
                             IsActive = true,
                             MainCategoryName = "Staples"
                         },
@@ -332,7 +335,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                         {
                             Id = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(8838),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(4242),
                             IsActive = true,
                             MainCategoryName = "Snacks & Beverages"
                         });
@@ -400,7 +403,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 1,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9987),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5986),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -415,7 +418,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 1,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(24),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6055),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -430,7 +433,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(55),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6104),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -445,7 +448,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(86),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6157),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -460,7 +463,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 3,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(117),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6204),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -475,7 +478,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 4,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(150),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6257),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -490,7 +493,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 5,
                             CategoryId = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(181),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6309),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -505,7 +508,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 6,
                             CategoryId = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(222),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6358),
                             IsActive = true,
                             MainCategoryId = 1,
                             ProductDescription = "",
@@ -520,7 +523,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 12,
                             CategoryId = 4,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(256),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6403),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -535,7 +538,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 11,
                             CategoryId = 4,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(289),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6452),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -550,7 +553,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 10,
                             CategoryId = 4,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(320),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6500),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -565,7 +568,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 7,
                             CategoryId = 5,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(352),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6547),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -580,11 +583,11 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 8,
                             CategoryId = 5,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(383),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6594),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/l4yi7bk0/snack-savourie/a/7/2/300-boondi-1-pouch-flipkart-supermart-original-imagfqnne4zhcjdd.jpeg?q=70",
+                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/l58iaa80/snack-savourie/k/r/x/-original-imagfybhffnh9uzz.jpeg?q=70",
                             ProductName = "Flipkart Supermart Boondi (Bhakarwadi)  (300 g)",
                             ProductPrice = 14.0,
                             SubCategoryId = 9
@@ -595,11 +598,11 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 7,
                             CategoryId = 5,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(414),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(6642),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
-                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/kpbipow0/chips/a/n/f/mad-angles-tomato-madness-bingo-original-imag3ks6zmmzackg.jpeg?q=70",
+                            ProductImage = "https://rukminim2.flixcart.com/image/416/416/l58iaa80/snack-savourie/k/r/x/-original-imagfybhffnh9uzz.jpeg?q=70",
                             ProductName = "Bingo Mad Angles Tomato Madness Chips  (66 g)",
                             ProductPrice = 17.0,
                             SubCategoryId = 10
@@ -610,7 +613,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 9,
                             CategoryId = 5,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(529),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(7004),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -625,7 +628,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 13,
                             CategoryId = 6,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(561),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(7055),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -640,7 +643,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 14,
                             CategoryId = 6,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(592),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(7107),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -655,7 +658,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 15,
                             CategoryId = 6,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(627),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(7160),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -670,7 +673,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             BrandId = 16,
                             CategoryId = 6,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 931, DateTimeKind.Local).AddTicks(659),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(7210),
                             IsActive = true,
                             MainCategoryId = 2,
                             ProductDescription = "",
@@ -725,7 +728,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 1,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9595),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5397),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Toor Daal"
@@ -735,7 +738,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 2,
                             CategoryId = 1,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9633),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5449),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Urad Daal"
@@ -745,7 +748,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 3,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9665),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5496),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Wheat Atta"
@@ -755,7 +758,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 4,
                             CategoryId = 3,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9696),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5543),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Rava & Sooji"
@@ -765,7 +768,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 5,
                             CategoryId = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9727),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5590),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Blended Oil"
@@ -775,7 +778,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 6,
                             CategoryId = 2,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9761),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5640),
                             IsActive = true,
                             MainCategoryId = 1,
                             SubCategoryName = "Ghee"
@@ -785,7 +788,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 7,
                             CategoryId = 4,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9794),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5688),
                             IsActive = true,
                             MainCategoryId = 2,
                             SubCategoryName = "Cookies"
@@ -795,7 +798,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 8,
                             CategoryId = 4,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9824),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5735),
                             IsActive = true,
                             MainCategoryId = 2,
                             SubCategoryName = "Cream Biscuits"
@@ -805,7 +808,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 9,
                             CategoryId = 5,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9854),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5782),
                             IsActive = true,
                             MainCategoryId = 2,
                             SubCategoryName = "Namkeen"
@@ -815,7 +818,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 10,
                             CategoryId = 5,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9888),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5832),
                             IsActive = true,
                             MainCategoryId = 2,
                             SubCategoryName = "Chips"
@@ -825,7 +828,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 11,
                             CategoryId = 6,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9919),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5881),
                             IsActive = true,
                             MainCategoryId = 2,
                             SubCategoryName = "Cold Drinks"
@@ -835,7 +838,7 @@ namespace ShopFusion.Services.ProductAPI.Migrations
                             Id = 12,
                             CategoryId = 6,
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2024, 3, 6, 19, 47, 26, 930, DateTimeKind.Local).AddTicks(9950),
+                            CreatedDate = new DateTime(2024, 3, 6, 19, 40, 19, 638, DateTimeKind.Local).AddTicks(5930),
                             IsActive = true,
                             MainCategoryId = 2,
                             SubCategoryName = "Energy & Sports Drinks"
