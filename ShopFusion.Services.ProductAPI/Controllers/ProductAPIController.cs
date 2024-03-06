@@ -166,8 +166,8 @@ namespace ShopFusion.Services.ProductAPI.Controllers
         }
 
       
-        [HttpGet("itemCategoryDetails")]
-        public ResponseDto GetItemCategoryDetails()
+        [HttpGet("itemCategoryDetails/{id:int}")]
+        public ResponseDto GetItemCategoryDetails(int id)
         {
             try
             {
@@ -196,10 +196,14 @@ namespace ShopFusion.Services.ProductAPI.Controllers
                                                    }).Distinct().ToList()
                                                }).Distinct().ToList();
                 */
+                if(id == 0)
+                {
+                    id = 1;
+                }
                 var result =
                _db.MainCategory.Join(_db.Categories, MC => MC.Id, CG => CG.MainCategoryId, (MC, CG) => new { MC, CG })
                                         .Join(_db.SubCategories, MC_CG => MC_CG.CG.Id, SC => SC.CategoryId, (MC_CG, SC) => new { MC_CG, SC })
-                                        .Where(x => x.MC_CG.MC.IsActive && x.MC_CG.CG.IsActive && x.SC.IsActive)
+                                        .Where(x => x.MC_CG.MC.IsActive && x.MC_CG.CG.IsActive && x.SC.IsActive && x.MC_CG.MC.Id ==id)
                                         .GroupBy(t => new { t.SC.MainCategoryId})
                                         .Select(s => new
                                         {
