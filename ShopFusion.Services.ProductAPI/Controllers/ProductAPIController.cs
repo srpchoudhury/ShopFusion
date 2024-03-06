@@ -213,6 +213,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
                                                {
                                                     CategoryId = c.Key,
                                                     CategoryName = c.First().MC_CG.CG.CategoryName,
+                                                    CategoryImage = c.First().MC_CG.CG.CategoryImage,
                                                     SubCategories = c.GroupBy(t => t.SC.Id)
                                                     .Select(s => new
                                                     {

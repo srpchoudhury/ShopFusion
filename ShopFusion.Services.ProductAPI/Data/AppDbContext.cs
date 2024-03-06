@@ -120,6 +120,7 @@ namespace ShopFusion.Services.ProductAPI.Data
             {
                 Id = 1,
                 CategoryName = "Dal's & Pulses",
+                CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/09/06/2017/38deea34-44ce-4650-a1fb-60f1c0172feb.png?q=90",
                 MainCategoryId = 1,
                 CreatedBy = "Admin",
                 CreatedDate = DateTime.Now,
@@ -129,6 +130,7 @@ namespace ShopFusion.Services.ProductAPI.Data
             {
                 Id = 2,
                 CategoryName = "Ghee & Oils",
+                CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/06/11/2023/bab3c31e-0be6-4f67-b9a6-cb341fa1f034.png?q=90",
                 MainCategoryId = 1,
                 CreatedBy = "Admin",
                 CreatedDate = DateTime.Now,
@@ -138,6 +140,7 @@ namespace ShopFusion.Services.ProductAPI.Data
             {
                 Id = 3,
                 CategoryName = "Atta & Flours",
+                CategoryImage = "https://rukminim2.flixcart.com/www/100/100/promos/05/07/2017/cd819684-9369-468b-895c-ef9b57b6b059.png?q=90",
                 MainCategoryId = 1,
                 CreatedBy = "Admin",
                 CreatedDate = DateTime.Now,
