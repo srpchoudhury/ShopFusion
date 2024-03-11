@@ -22,7 +22,7 @@ namespace ShopFusion.Services.ProductAPI.Data
 
           
          
-           modelBuilder.Entity<MainCategory>().HasData(new MainCategory
+            modelBuilder.Entity<MainCategory>().HasData(new MainCategory
             {
                 Id = 1,
                 MainCategoryName = "Staples",
@@ -38,6 +38,47 @@ namespace ShopFusion.Services.ProductAPI.Data
                 CreatedDate = DateTime.Now,
                 IsActive = true
             });
+            modelBuilder.Entity<MainCategory>().HasData(new MainCategory
+            {
+                Id = 3,
+                MainCategoryName = "Packaged Foods",
+                CreatedBy = "Admin",
+                CreatedDate = DateTime.Now,
+                IsActive = true
+            });
+            modelBuilder.Entity<MainCategory>().HasData(new MainCategory
+            {
+                Id = 4,
+                MainCategoryName = "Personal & Baby Care",
+                CreatedBy = "Admin",
+                CreatedDate = DateTime.Now,
+                IsActive = true
+            });
+            modelBuilder.Entity<MainCategory>().HasData(new MainCategory
+            {
+                Id = 5,
+                MainCategoryName = "Household Care",
+                CreatedBy = "Admin",
+                CreatedDate = DateTime.Now,
+                IsActive = true
+            });
+            modelBuilder.Entity<MainCategory>().HasData(new MainCategory
+            {
+                Id = 6,
+                MainCategoryName = "Dairy & Eggs",
+                CreatedBy = "Admin",
+                CreatedDate = DateTime.Now,
+                IsActive = true
+            });
+            modelBuilder.Entity<MainCategory>().HasData(new MainCategory
+            {
+                Id = 7,
+                MainCategoryName = "Home & Kitchen",
+                CreatedBy = "Admin",
+                CreatedDate = DateTime.Now,
+                IsActive = true
+            });
+
             modelBuilder.Entity<Brands>().HasData(new Brands
             {
               Id = 1,
