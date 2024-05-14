@@ -21,7 +21,7 @@ builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at ok https://aka.ms/aspnetcore/swashbuckle
+// Learn more about configuring Swagger/OpenAPI at ok okj https://aka.ms/aspnetcore/swashbuckle
 
 // Configure CORS policy
 builder.Services.AddCors(options =>
