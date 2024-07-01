@@ -3,19 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{26834252-7F47-4358-883F-E74C285C8AC2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{B655E253-0141-4CF0-91A1-2517FC300D5D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F46342C3-F2A3-4C00-82C0-00085522DE58}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopFusion.Services.CouponAPI", "ShopFusion.Services.CouponAPI\ShopFusion.Services.CouponAPI.csproj", "{A600A7C6-E2C1-473C-BEDF-0DA4241BC60F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopFusion.Services.AuthAPI", "ShopFusion.Services.AuthAPI\ShopFusion.Services.AuthAPI.csproj", "{3B83D535-DB62-473A-A246-B1F090D3A785}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopFusion.Services.ProductAPI", "ShopFusion.Services.ProductAPI\ShopFusion.Services.ProductAPI.csproj", "{7587898C-EED6-4E43-8AA7-6E7A8DC8FFC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopFusion.Services.ProductAPI", "ShopFusion.Services.ProductAPI\ShopFusion.Services.ProductAPI.csproj", "{7587898C-EED6-4E43-8AA7-6E7A8DC8FFC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopFusion.Services.ShoppingCartAPI", "ShopFusion.Services.ShoppingCartAPI\ShopFusion.Services.ShoppingCartAPI.csproj", "{2D3E0028-7E67-4888-9C82-6451E2138BD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopFusion.Services.ShoppingCartAPI", "ShopFusion.Services.ShoppingCartAPI\ShopFusion.Services.ShoppingCartAPI.csproj", "{2D3E0028-7E67-4888-9C82-6451E2138BD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

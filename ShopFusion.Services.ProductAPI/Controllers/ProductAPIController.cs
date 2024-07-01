@@ -11,13 +11,13 @@ namespace ShopFusion.Services.ProductAPI.Controllers
     [Route("api/product")]
     [ApiController]
     [EnableCors("AllowAll")]
-   
+
     public class ProductAPIController : ControllerBase
     {
         private readonly AppDbContext _db;
         private ResponseDto _response;
         private IMapper _mapper;
-        public ProductAPIController(AppDbContext db,IMapper mapper)
+        public ProductAPIController(AppDbContext db, IMapper mapper)
         {
             _db = db;
             _response = new ResponseDto();
@@ -29,18 +29,18 @@ namespace ShopFusion.Services.ProductAPI.Controllers
         {
             try
             {
-               // IEnumerable<Product> objList = _db.Products.ToList();
-              //  _response.Result = _mapper.Map<IEnumerable<ProductDto>>(objList);
+                // IEnumerable<Product> objList = _db.Products.ToList();
+                //  _response.Result = _mapper.Map<IEnumerable<ProductDto>>(objList);
                 var result = _db.Products.Join(_db.MainCategory, PD => PD.MainCategoryId, MC => MC.Id, (PD, MC) => new { PD, MC })
                                          .Join(_db.Brands, PD_MC => PD_MC.PD.BrandId, BD => BD.Id, (PD_MC, BD) => new { PD_MC, BD })
-                                         .Join(_db.Categories, PD_MC_BD =>PD_MC_BD.PD_MC.PD.CategoryId, CG => CG.Id, (PD_MC_BD,CG) => new {PD_MC_BD, CG })
-                                         .Join(_db.SubCategories,PD_MC_BD_CG =>PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.SubCategoryId, SC =>SC.Id, (PD_MC_BD_CG,SC) => new { PD_MC_BD_CG, SC })
-                                         .Where(x => x.SC.IsActive == true && 
+                                         .Join(_db.Categories, PD_MC_BD => PD_MC_BD.PD_MC.PD.CategoryId, CG => CG.Id, (PD_MC_BD, CG) => new { PD_MC_BD, CG })
+                                         .Join(_db.SubCategories, PD_MC_BD_CG => PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.SubCategoryId, SC => SC.Id, (PD_MC_BD_CG, SC) => new { PD_MC_BD_CG, SC })
+                                         .Where(x => x.SC.IsActive == true &&
                                                      x.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.IsActive == true &&
                                                      x.PD_MC_BD_CG.PD_MC_BD.BD.IsActive == true &&
                                                      x.PD_MC_BD_CG.PD_MC_BD.PD_MC.MC.IsActive == true &&
-                                                     x.PD_MC_BD_CG.CG.IsActive == true )
-                                         .Select(s => new 
+                                                     x.PD_MC_BD_CG.CG.IsActive == true)
+                                         .Select(s => new
                                          {
                                              ProductId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.Id,
                                              ProductName = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductName,
@@ -82,7 +82,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
                                                     x.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.IsActive == true &&
                                                     x.PD_MC_BD_CG.PD_MC_BD.BD.IsActive == true &&
                                                     x.PD_MC_BD_CG.PD_MC_BD.PD_MC.MC.IsActive == true &&
-                                                    x.PD_MC_BD_CG.CG.IsActive == true && 
+                                                    x.PD_MC_BD_CG.CG.IsActive == true &&
                                                     x.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.Id == id)
                                         .Select(s => new
                                         {
@@ -110,7 +110,6 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             return _response;
         }
 
-      
         [HttpPost]
         public ResponseDto Post([FromBody] ProductDto productDto)
         {
@@ -128,7 +127,6 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             }
             return _response;
         }
-
 
         [HttpPut]
         public ResponseDto put([FromBody] ProductDto productDto)
@@ -155,7 +153,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             {
                 Product obj = _db.Products.First(u => u.Id == id);
                 _db.Products.Remove(obj);
-                _db.SaveChanges(); 
+                _db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -165,7 +163,6 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             return _response;
         }
 
-      
         [HttpGet("itemCategoryDetails/{id:int}")]
         public ResponseDto GetItemCategoryDetails(int id)
         {
@@ -196,18 +193,18 @@ namespace ShopFusion.Services.ProductAPI.Controllers
                                                    }).Distinct().ToList()
                                                }).Distinct().ToList();
                 */
-                if(id == 0)
+                if (id == 0)
                 {
                     id = 1;
                 }
                 var result =
                _db.MainCategory.Join(_db.Categories, MC => MC.Id, CG => CG.MainCategoryId, (MC, CG) => new { MC, CG })
                                         .Join(_db.SubCategories, MC_CG => MC_CG.CG.Id, SC => SC.CategoryId, (MC_CG, SC) => new { MC_CG, SC })
-                                        .Where(x => x.MC_CG.MC.IsActive && x.MC_CG.CG.IsActive && x.SC.IsActive && x.MC_CG.MC.Id ==id)
-                                        .GroupBy(t => new { t.SC.MainCategoryId})
+                                        .Where(x => x.MC_CG.MC.IsActive && x.MC_CG.CG.IsActive && x.SC.IsActive && x.MC_CG.MC.Id == id)
+                                        .GroupBy(t => new { t.SC.MainCategoryId })
                                         .Select(s => new
                                         {
-                                           MainCategories = s.GroupBy(g => g.SC.MainCategoryId)
+                                            MainCategories = s.GroupBy(g => g.SC.MainCategoryId)
                                            .Select(x => new
                                            {
                                                MainCategoryId = x.Key,
@@ -215,10 +212,10 @@ namespace ShopFusion.Services.ProductAPI.Controllers
                                                Categories = x.GroupBy(g => g.SC.CategoryId)
                                                .Select(c => new
                                                {
-                                                    CategoryId = c.Key,
-                                                    CategoryName = c.First().MC_CG.CG.CategoryName,
-                                                    CategoryImage = c.First().MC_CG.CG.CategoryImage,
-                                                    SubCategories = c.GroupBy(t => t.SC.Id)
+                                                   CategoryId = c.Key,
+                                                   CategoryName = c.First().MC_CG.CG.CategoryName,
+                                                   CategoryImage = c.First().MC_CG.CG.CategoryImage,
+                                                   SubCategories = c.GroupBy(t => t.SC.Id)
                                                     .Select(s => new
                                                     {
                                                         SubCategoryId = s.Key,
@@ -255,22 +252,24 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             }
             return _response;
         }
+
         [HttpGet("brands")]
         public ResponseDto GetBrand()
-         {
-             try
-             {
-                 IEnumerable<Brands> objList = _db.Brands.ToList();
-                 _response.Result = _mapper.Map<IEnumerable<BrandDto>>(objList);
-             }
-             catch (Exception ex)
-             {
-                 _response.IsSuccess = false;
-                 _response.Message = ex.Message;
-             }
-             return _response;
-         }
-       [HttpGet("categories")]
+        {
+            try
+            {
+                IEnumerable<Brands> objList = _db.Brands.ToList();
+                _response.Result = _mapper.Map<IEnumerable<BrandDto>>(objList);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
+
+        [HttpGet("categories")]
         public ResponseDto GetCategory()
         {
             try
@@ -285,6 +284,7 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             }
             return _response;
         }
+
         [HttpGet("subcategories")]
         public ResponseDto GetSubCategory()
         {
@@ -292,6 +292,47 @@ namespace ShopFusion.Services.ProductAPI.Controllers
             {
                 IEnumerable<SubCategories> objList = _db.SubCategories.ToList();
                 _response.Result = _mapper.Map<IEnumerable<SubCategoryDto>>(objList);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
+
+        [HttpGet("productsBasedOnCategories/{categoryId:int}")]
+        public ResponseDto GetProductsBasedOnCategories(int categoryId)
+        {
+            try
+            {
+                var result = _db.Products.Join(_db.MainCategory, PD => PD.MainCategoryId, MC => MC.Id, (PD, MC) => new { PD, MC })
+                                        .Join(_db.Brands, PD_MC => PD_MC.PD.BrandId, BD => BD.Id, (PD_MC, BD) => new { PD_MC, BD })
+                                        .Join(_db.Categories, PD_MC_BD => PD_MC_BD.PD_MC.PD.CategoryId, CG => CG.Id, (PD_MC_BD, CG) => new { PD_MC_BD, CG })
+                                        .Join(_db.SubCategories, PD_MC_BD_CG => PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.SubCategoryId, SC => SC.Id, (PD_MC_BD_CG, SC) => new { PD_MC_BD_CG, SC })
+                                        .Where(x => x.SC.IsActive == true &&
+                                                    x.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.IsActive == true &&
+                                                    x.PD_MC_BD_CG.PD_MC_BD.BD.IsActive == true &&
+                                                    x.PD_MC_BD_CG.PD_MC_BD.PD_MC.MC.IsActive == true &&
+                                                    x.PD_MC_BD_CG.CG.IsActive == true &&
+                                                    x.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.CategoryId == categoryId)
+                                        .Select(s => new
+                                        {
+                                            ProductId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.Id,
+                                            ProductName = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductName,
+                                            ProductDescription = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductDescription,
+                                            ProductImage = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductImage,
+                                            ProductPrice = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.ProductPrice,
+                                            BrandId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.BrandId,
+                                            BrandName = s.PD_MC_BD_CG.PD_MC_BD.BD.BrandName,
+                                            MainCategoryId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.MainCategoryId,
+                                            MainCategoryName = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.MC.MainCategoryName,
+                                            CategoryId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.CategoryId,
+                                            CategoryName = s.PD_MC_BD_CG.CG.CategoryName,
+                                            SubCategoryId = s.PD_MC_BD_CG.PD_MC_BD.PD_MC.PD.SubCategoryId,
+                                            SubCategoryName = s.SC.SubCategoryName
+                                        }).ToList();
+                _response.Result = result;
             }
             catch (Exception ex)
             {
