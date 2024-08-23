@@ -9,6 +9,7 @@ namespace ShopFusion.Services.AuthAPI.Controllers
     [Route("api/auth")]
     [ApiController]
     [EnableCors("AllowAll")]
+    ///authapi
     public class AuthAPIController : ControllerBase
     {
         private readonly IAuthService _authService;
